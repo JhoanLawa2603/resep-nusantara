@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resep Nusantara - 20 Menu Lengkap</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root { --primary-color: #ffc107; }
+    body { padding-top: 80px; background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    /* Hero Banner Styling (Sama dengan Gallery) */
+    .hero-banner {
+      height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/Makanan 4.jpg'); /* Menggunakan gambar Soto Betawi */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero-banner h1 { font-size: 3.5rem; font-weight: 800; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+    .hero-banner p { font-size: 1.2rem; max-width: 600px; margin: auto; }
+
+    /* Card Styling */
+    .card { transition: transform 0.3s; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden; }
+    .card:hover { transform: translateY(-10px); }
+    .card-img-top { height: 180px; object-fit: cover; }
+
+    .footer-custom { background-color: #ffc107; color: #212529; padding: 40px 0 20px 0; margin-top: 50px; }
+    .badge-cat { position: absolute; top: 10px; left: 10px; z-index: 10; padding: 8px 12px; border-radius: 20px; }
+
+    .modal-body { max-height: 75vh; overflow-y: auto; padding: 30px; }
+    
+    .resep-section-title {
+        border-left: 5px solid #ffc107;
+        padding-left: 15px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        color: #856404;
+    }
+
+    @media (min-width: 1200px) {
+      .row-cols-xl-5 > * { flex: 0 0 auto; width: 20%; }
+    }
+   /* Waktu */
+    #greeting-box {
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: 1px solid var(--primary-color);
+    }
+
+    #digital-clock {
+      letter-spacing: 2px;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(255,255,255,0.3);
+    }
+
+   #greeting-text {
+  color: #ffc107;   /* kuning navbar */
+  font-weight: bold;
+}
+
+#digital-clock {
+  color: #ffffff;   /* putih */
+  font-weight: bold;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-warning fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/Logo 1.png" alt="logo" width="80" height="80" class="d-inline-block me-0">
+        <span class="fw-bold" style="font-size: 1rem;">Resep Nusantara</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Home UAS.index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Profil.index.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold" href="Page Resep.index.html">Resep</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Gallery UAS.index.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Contact.index.html">Contact/Form</a></li> 
+        </ul>
+        <form class="d-flex ms-lg-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari resep...">
+          <button class="btn btn-dark" type="submit">Cari</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+ <header class="hero-banner">
+  <div class="container">
+
+    <!-- ===== JAM & UCAPAN (DI SINI TEMPATNYA) ===== -->
+    <div id="greeting-box">
+      <span id="greeting-text">Selamat Datang!</span>
+      <span id="digital-clock">00:00:00</span>
+    </div>
+    <!-- ===== AKHIR JAM & UCAPAN ===== -->
+
+    <h1 class="display-4 fw-bold">RESEP AUTENTIK</h1>
+    <p>Eksplorasi 20 Warisan Kuliner Nusantara: Rahasia masakan lezat dari dapur tradisional Indonesia.</p>
+
+  </div>
+</header>
+
+  <div class="container-fluid px-4">
+    <h3 class="text-center fw-bold mb-5">KATALOG KULINER NUSANTARA</h3>
+    
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-4">
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 1.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Nasi Goreng Spesial</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m1">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 2.jpeg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Rendang Padang</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m2">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 3.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Sate Madura</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m3">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 4.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Soto Betawi</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m4">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 5.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Gado-Gado</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m5">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 6.avif" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Bakso Sapi</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m6">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 7.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Gudeg Jogja</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m7">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 8.webp" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Pempek Palembang</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m8">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 9.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Ayam Penyet</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m9">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-danger badge-cat">Makanan</span><img src="img/Makanan 10.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Rawon Surabaya</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#m10">Lihat Resep</button></div></div></div>
+
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 1.jpeg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Es Dawet Ayu</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d1">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 2.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Es Pisang Ijo</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d2">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 3.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Wedang Ronde</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d3">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 4.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Bir Pletok</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d4">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 5.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Es Teler</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d5">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 6.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Bajigur</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d6">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 7.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Sekoteng</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d7">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 8.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Es Kelapa Muda</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d8">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 9.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Es Campur</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d9">Lihat Resep</button></div></div></div>
+      <div class="col"><div class="card h-100"><span class="badge bg-primary badge-cat">Minuman</span><img src="img/Minuman 10.jpg" class="card-img-top"><div class="card-body text-center d-flex flex-column"><h6 class="fw-bold">Wedang Jahe</h6><button class="btn btn-warning btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#d10">Lihat Resep</button></div></div></div>
+    </div>
+  </div>
+<div class="modal fade" id="m1" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Nasi Goreng Spesial Nusantara</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama & Isian:</div><ul><li>2 piring nasi putih (dingin/nasi sisa kemarin lebih baik)</li><li>100g daging ayam (potong dadu) & 50g udang kupas</li><li>2 butir telur (kocok lepas)</li><li>Sawi hijau dan kol secukupnya (iris kasar)</li></ul>
+    <div class="resep-section-title">Bumbu Halus & Saus:</div><ul><li>5 bawang merah, 3 bawang putih, 2 kemiri, 3 cabe merah</li><li>2 sdm kecap manis, 1 sdm saus tiram, 1 sdt garam, 1/2 sdt lada</li></ul>
+    <div class="resep-section-title">Cara Memasak:</div><ol><li>Panaskan minyak, buat orak-arik telur lalu sisihkan.</li><li>Tumis bumbu halus hingga harum dan matang sempurna.</li><li>Masukkan ayam dan udang, masak hingga berubah warna.</li><li>Masukkan nasi putih, telur orak-arik, dan sayuran.</li><li>Tambahkan kecap manis, saus tiram, garam, dan lada. Aduk dengan api besar hingga bumbu meresap.</li></ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m2" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Rendang Daging Sapi Minang</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div><ul><li>1 kg daging sapi paha (potong melawan serat)</li><li>1,5 liter santan kental dari 3 butir kelapa</li><li>3 batang serai (geprek), 5 lembar daun jeruk, 1 lembar daun kunyit</li></ul>
+    <div class="resep-section-title">Bumbu Halus (Rahasia Lezat):</div><ul><li>100g bawang merah, 50g bawang putih</li><li>150g cabe merah keriting (sesuai selera pedas)</li><li>3 cm jahe, 5 cm lengkuas muda, 2 sdm garam</li></ul>
+    <div class="resep-section-title">Cara Memasak:</div><ol><li>Rebus santan bersama bumbu halus dan daun-daunan sambil terus diaduk agar tidak pecah.</li><li>Setelah santan mendidih dan mengeluarkan minyak, masukkan daging sapi.</li><li>Kecilkan api (slow cook), masak selama 4-5 jam.</li><li>Aduk sesekali agar bagian bawah tidak gosong hingga dedak rendang menghitam dan kering.</li></ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m3" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Sate Ayam Madura Autentik</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div><ul><li>500g dada ayam (potong kotak), tusuk sate secukupnya.</li><li>Bahan olesan: Kecap manis campur sedikit minyak dan kaldu bubuk.</li></ul>
+    <div class="resep-section-title">Bumbu Kacang:</div><ul><li>250g kacang tanah goreng (haluskan)</li><li>3 siung bawang putih, 4 bawang merah, 2 butir kemiri (sangrai lalu ulek)</li><li>150ml air, 50g gula merah, garam secukupnya.</li></ul>
+    <div class="resep-section-title">Cara Memasak:</div><ol><li>Masak bumbu kacang halus dengan air dan gula merah hingga mengental dan berminyak.</li><li>Ambil sedikit bumbu kacang, campur dengan kecap untuk marinasi ayam selama 15 menit.</li><li>Tusuk daging ayam, bakar di atas arang sambil diolesi bahan olesan hingga matang.</li><li>Sajikan dengan siraman bumbu kacang, kecap, dan irisan bawang merah mentah.</li></ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m4" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Soto Betawi Kuah Susu Gurih</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div><ul><li>500g daging sapi dan jeroan (rebus empuk)</li><li>250ml susu cair full cream + 250ml santan kental</li><li>Kayu manis, cengkeh, dan kapulaga untuk aroma.</li></ul>
+    <div class="resep-section-title">Bumbu Halus:</div><ul><li>8 bawang merah, 5 bawang putih, 3 kemiri goreng, 1 sdt ketumbar.</li></ul>
+    <div class="resep-section-title">Cara Memasak:</div><ol><li>Tumis bumbu halus bersama rempah rempah hingga harum.</li><li>Masukkan bumbu ke dalam air rebusan daging (kaldu).</li><li>Tuangkan susu dan santan perlahan, aduk terus jangan sampai pecah.</li><li>Masukkan kembali potongan daging. Sajikan dengan emping, tomat, dan daun bawang.</li></ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m5" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Gado-Gado Siram Spesial</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Sayuran:</div>
+    <ul>
+        <li>Bayam, kacang panjang, tauge, labu siam (rebus semua)</li>
+        <li>Tahu & tempe goreng, kentang rebus, telur rebus.</li>
+    </ul>
+    <div class="resep-section-title">Saus Kacang:</div>
+    <ul>
+        <li>200g kacang tanah goreng ulek, 2 siung bawang putih goreng, 3 cabe rawit.</li>
+        <li>1 blok gula merah, 1 sdt garam, 2 sdm air asam jawa.</li>
+    </ul>
+    <div class="resep-section-title">Cara Membuat:</div>
+    <ol>
+       <li>Haluskan kacang bersama bumbu lainnya, tambahkan air hangat hingga tekstur kental yang diinginkan.</li>
+       <li>Tata sayuran dan protein di piring.</li>
+       <li>Siram dengan saus kacang merata, taburi kerupuk udang dan bawang goreng.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="m6" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Bakso Sapi Kenyal Wonogiri</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Adonan Bakso:</div>
+    <ul>
+        <li>500g daging sapi paha dalam (dingin/setengah beku), potong kecil</li>
+        <li>100g es batu (hancurkan halus) & 1 butir putih telur</li>
+        <li>100g tepung tapioka/sagu tani & 1 sdt baking powder</li>
+        <li>Bumbu: 1 sdm bawang putih goreng, 1 sdm bawang merah goreng, 2 sdt garam, 1 sdt merica bubuk.</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah Kaldu:</div>
+    <ul>
+        <li>500g tulang sapi (sumsum/kaki), 3 liter air, 5 siung bawang putih (geprek goreng), daun seledri.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Memasak:</div>
+    <ol>
+        <li>Proses daging dan es batu menggunakan food processor hingga menjadi pasta lembut.</li>
+        <li>Masukkan bumbu, putih telur, dan tapioka. Giling kembali hingga adonan tercampur rata dan kesat.</li>
+        <li>Siapkan air panas dalam panci (matikan api saat membulatkan).</li>
+        <li>Bentuk adonan menjadi bola dengan tangan, masukkan ke air panas. Setelah panci penuh, nyalakan api kecil dan rebus hingga bakso mengapung.</li>
+        <li>Untuk kuah: Rebus tulang sapi dalam api kecil (simmer) selama 2 jam, masukkan bumbu kuah, sajikan bersama bakso.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m7" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Gudeg Nangka Komplet Khas Yogyakarta</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div>
+    <ul>
+        <li>1 kg nangka muda (cacah kasar), 5 butir telur bebek rebus (kupas kulit).</li>
+        <li>1 liter santan kental & 1 liter air kelapa (kunci warna cokelat alami).</li>
+        <li>5 lembar daun jati (opsional untuk warna merah), 5 lembar daun salam, 3 cm lengkuas.</li>
+    </ul>
+    <div class="resep-section-title">Bumbu Halus:</div>
+    <ul>
+        <li>15 bawang merah, 8 bawang putih, 6 kemiri sangrai, 2 sdm ketumbar bubuk, 200g gula merah (sisir halus), 1 sdm garam.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Memasak:</div>
+    <ol>
+        <li>Alasi dasar panci tebal dengan daun jati dan daun salam. Masukkan nangka muda, telur rebus, dan bumbu halus.</li>
+        <li>Tuangkan air kelapa hingga merendam seluruh nangka. Masak dengan api sedang hingga air kelapa menyusut setengahnya.</li>
+        <li>Tuangkan santan kental, kecilkan api ke posisi paling kecil.</li>
+        <li>Masak perlahan (minimal 4-6 jam atau semalaman) hingga kuah santan benar-benar kering (asat) dan meresap ke dalam nangka serta telur.</li>
+        <li>Sajikan dengan krecek dan ayam opor untuk rasa maksimal.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m8" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Pempek Kapal Selam & Cuko Autentik</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Adonan Ikan:</div>
+    <ul>
+        <li>500g daging ikan tenggiri giling (dingin), 350ml air es.</li>
+        <li>2 sdm garam, 1 sdt penyedap rasa, 400g-500g tepung sagu tani (kualitas terbaik).</li>
+        <li>Isian: 5 butir telur ayam (kocok sebentar/utuh).</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah Cuko (Pedas Mantap):</div>
+    <ul>
+        <li>500g gula merah batok (warna hitam), 500ml air, 2 sdm asam jawa, 10 siung bawang putih (haluskan), 50g cabe rawit hijau.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Memasak:</div>
+    <ol>
+        <li>Campur ikan giling dan air es, aduk hingga encer. Tambahkan garam dan penyedap, aduk hingga adonan mengental.</li>
+        <li>Masukkan tepung sagu sedikit demi sedikit, aduk perlahan (jangan ditekan/diuleni lama agar tidak alot).</li>
+        <li>Bentuk adonan menjadi lonjong, buat lubang di tengah, isi dengan telur, rapatkan bagian atasnya.</li>
+        <li>Langsung masukkan ke air mendidih yang sudah diberi sedikit minyak. Rebus hingga mengapung (sekitar 15-20 menit).</li>
+        <li>Cuko: Rebus air dan gula merah hingga larut, masukkan bawang putih, cabe, dan asam. Saring sebelum disajikan.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m9" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Ayam Penyet Sambal Domba Minyak Panas</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Ungkep Ayam:</div>
+    <ul>
+        <li>1 ekor ayam (potong 4), 2 lembar daun salam, 1 batang serai.</li>
+        <li>Bumbu halus: 5 bawang putih, 3 cm kunyit, 2 cm jahe, 1 sdm ketumbar, garam.</li>
+    </ul>
+    <div class="resep-section-title">Bahan Sambal Korek:</div>
+    <ul>
+        <li>20 cabe rawit merah, 5 cabe rawit hijau, 3 siung bawang putih goreng sebentar.</li>
+        <li>Garam, gula, dan 3 sdm minyak goreng panas sisa menggoreng ayam.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Memasak:</div>
+    <ol>
+        <li>Rebus ayam dengan bumbu halus dan sedikit air (ungkep) hingga air menyusut dan bumbu meresap.</li>
+        <li>Goreng ayam dalam minyak panas hingga bagian luar garing kecokelatan namun tetap juicy di dalam.</li>
+        <li>Sambal: Ulek kasar cabe rawit, bawang putih, dan garam. Siram dengan minyak goreng yang benar-benar panas mendidih.</li>
+        <li>Letakkan ayam panas di atas sambal, tekan (penyet) menggunakan ulekan hingga serat daging terbuka dan terkena sambal.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="m10" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Rawon Daging Sapi Kluwek Hitam Pekat</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div>
+    <ul>
+        <li>500g daging sandung lamur (lemak gurih), potong dadu.</li>
+        <li>2 batang serai (geprek), 5 lembar daun jeruk, 2 liter air.</li>
+    </ul>
+    <div class="resep-section-title">Bumbu Halus (Kunci Warna):</div>
+    <ul>
+        <li>5-7 buah kluwek (pilih yang tidak pahit, rendam air panas), 10 bawang merah, 6 bawang putih, 3 cm kunyit, 2 cm jahe, 1 sdt ketumbar.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Memasak:</div>
+    <ol>
+        <li>Rebus daging sapi dalam air mendidih hingga setengah empuk. Buang buih yang mengapung di permukaan.</li>
+        <li>Tumis bumbu halus bersama serai dan daun jeruk hingga benar-benar matang dan mengeluarkan aroma kuat.</li>
+        <li>Masukkan tumisan bumbu ke dalam panci daging. Aduk rata.</li>
+        <li>Kecilkan api, masak hingga daging empuk dan kuah berubah menjadi hitam pekat meresap.</li>
+        <li>Sajikan dengan tauge pendek mentah, telur asin, sambal terasi, dan kerupuk udang.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d1" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Es Dawet Ayu Segar Tradisional</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Cendol/Dawet:</div>
+    <ul>
+        <li>100g tepung beras, 50g tepung tapioka, 600ml air perasan daun pandan & suji.</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah & Manisan:</div>
+    <ul>
+        <li>500ml santan kental (rebus dengan daun pandan & garam), 200g gula merah (rebus dengan sedikit air hingga kental), potongan buah nangka.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Campur tepung beras, tapioka, dan air pandan. Masak sambil diaduk terus hingga mengental dan bening meletup-letup.</li>
+        <li>Cetak adonan menggunakan saringan cendol ke dalam wadah berisi air es. Tiriskan.</li>
+        <li>Penyajian: Masukkan sirup gula merah ke dasar gelas, tambahkan dawet, potongan nangka, es batu hancur, dan siram dengan kuah santan.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d2" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Es Pisang Ijo Makassar Lengkap</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Pisang:</div>
+    <ul>
+        <li>6-8 buah pisang raja matang (kukus dahulu), 150g tepung beras, 150g tepung terigu, 500ml santan, 50ml air pandan.</li>
+    </ul>
+    <div class="resep-section-title">Bahan Bubur Sumsum:</div>
+    <ul>
+        <li>100g tepung beras, 750ml santan, 1 sdt garam, 2 lembar daun pandan.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Adonan Kulit: Campur semua bahan kulit, masak hingga menjadi adonan kalis. Ambil sedikit adonan, pipihkan, bungkus pisang raja di dalamnya. Kukus selama 20 menit.</li>
+        <li>Bubur Sumsum: Masak semua bahan bubur sumsum sambil diaduk hingga mengental dan halus.</li>
+        <li>Penyajian: Letakkan bubur sumsum di mangkuk, beri irisan pisang ijo, es serut, sirup merah DHT/Cocopandan, dan sedikit susu kental manis.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d3" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Wedang Ronde Jahe Penghangat Tubuh</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Ronde:</div>
+    <ul>
+        <li>200g tepung ketan, 25g tepung tangmien (opsional agar kenyal), air hangat secukupnya.</li>
+        <li>Isian: 100g kacang tanah sangrai (haluskan), campur dengan 50g gula pasir.</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah Jahe:</div>
+    <ul>
+        <li>1 liter air, 150g jahe tua (bakar dan geprek), 2 batang serai, 150g gula jawa/aren, kayu manis.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Adonan: Campur tepung ketan dengan air sedikit demi sedikit hingga bisa dipulung. Ambil sedikit adonan, beri isian kacang, bulatkan.</li>
+        <li>Rebus bulatan ronde dalam air mendidih hingga mengapung. Angkat.</li>
+        <li>Kuah: Rebus air, jahe, serai, dan gula hingga mendidih lama agar rasa jahe keluar pedas maksimal.</li>
+        <li>Sajikan ronde dalam mangkuk, siram dengan kuah jahe panas. Tambahkan kolang-kaling atau roti tawar jika suka.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d4" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Bir Pletok Betawi (Segar & Sehat)</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Rempah:</div>
+    <ul>
+        <li>1,5 liter air, 250g jahe emprit (bakar), 15g kayu secang (untuk warna merah alami).</li>
+        <li>Rempah lain: 3 batang serai, 5cm kayu manis, 5 butir kapulaga, 5 butir cengkeh, sedikit biji pala.</li>
+        <li>Pemanis: 200g gula pasir (sesuaikan selera) & 1/2 sdt garam.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Hancurkan jahe yang sudah dibakar. Masukkan ke dalam air mendidih bersama semua rempah lainnya kecuali kayu secang.</li>
+        <li>Masak dengan api kecil selama 30 menit agar sari rempah keluar sempurna.</li>
+        <li>Masukkan kayu secang. Aduk rata hingga kuah berubah menjadi merah cantik. Masukkan gula dan garam.</li>
+        <li>Saring minuman. Bir pletok siap diminum hangat atau dimasukkan ke botol dan dikocok (pletok) hingga berbusa sebelum diminum dingin.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d5" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Es Teler Sultan Isian Melimpah</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Isian:</div>
+    <ul>
+        <li>2 buah alpukat mentega (kerok besar), 5 biji nangka matang (potong dadu), 1 buah kelapa muda (ambil dagingnya).</li>
+        <li>Pelengkap: Kolang-kaling warna-warni dan jeli kelapa (opsional).</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah:</div>
+    <ul>
+        <li>100ml susu kental manis putih, 200ml santan matang (rebus dengan garam & pandan), sirup gula putih cair.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Siapkan gelas besar atau mangkuk saji. Susun potongan alpukat, nangka, dan kelapa muda di bagian bawah.</li>
+        <li>Tuangkan sirup gula putih dan santan matang secukupnya.</li>
+        <li>Tambahkan es batu serut yang banyak di atasnya.</li>
+        <li>Siram dengan susu kental manis secara melingkar di atas es. Sajikan segera selagi dingin.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d6" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Bajigur Jahe Kopi Khas Jawa Barat</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div>
+    <ul>
+        <li>1 liter santan encer, 150g gula aren (sisir), 50g jahe (bakar & geprek).</li>
+        <li>Rempah: 1 batang kayu manis, 2 lembar daun pandan, 1/2 sdt garam.</li>
+        <li>Bahan Rahasia: 1 sdm kopi bubuk (larutkan dengan sedikit air) agar aroma khas.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Rebus santan, gula aren, jahe, dan daun pandan. Aduk terus agar santan tidak pecah.</li>
+        <li>Masukkan kayu manis dan garam. Setelah mendidih, masukkan larutan kopi bubuk.</li>
+        <li>Kecilkan api, masak selama 5 menit hingga aroma menyatu.</li>
+        <li>Saring ke dalam gelas saji. Tambahkan potongan kolang-kaling atau daging kelapa muda sebagai isian.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d7" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Sekoteng Hangat Malam Hari</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Isian (Komplet):</div>
+    <ul>
+        <li>Kacang hijau rebus, kacang tanah sangrai, pacar cina rebus (merah), potongan roti tawar dadu, kolang-kaling iris.</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah Jahe:</div>
+    <ul>
+        <li>1 liter air, 100g jahe emprit (geprek), 100g gula pasir, sedikit garam.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Kuah: Rebus air, jahe, dan gula hingga mendidih dan rasa pedas jahe keluar.</li>
+        <li>Penyajian: Siapkan mangkuk kecil, masukkan 1 sdm kacang hijau, 1 sdm pacar cina, kolang-kaling, dan roti tawar.</li>
+        <li>Tuangkan kuah jahe mendidih ke dalam mangkuk.</li>
+        <li>Tambahkan sedikit susu kental manis di atasnya untuk memberikan rasa gurih.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d8" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Es Kelapa Muda Jeruk Nipis Madu</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div>
+    <ul>
+        <li>1 buah kelapa muda (ambil air dan kerok dagingnya), 2 buah jeruk nipis (peras airnya).</li>
+        <li>Pemanis: Sirup gula pasir atau madu murni secukupnya.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Tuangkan air kelapa muda ke dalam pitcher atau wadah besar.</li>
+        <li>Masukkan daging kelapa muda yang sudah dikerok.</li>
+        <li>Tambahkan air perasan jeruk nipis dan madu. Aduk hingga merata.</li>
+        <li>Sajikan di gelas dengan es batu. Tambahkan irisan tipis jeruk nipis sebagai hiasan.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d9" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Es Campur Pelangi Segar</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Isian:</div>
+    <ul>
+        <li>Cincau hitam (potong dadu), tape singkong (buang seratnya), dawet hijau, buah melon (serut), selasih (rendam air).</li>
+    </ul>
+    <div class="resep-section-title">Bahan Kuah:</div>
+    <ul>
+        <li>Sirup merah cocopandan, susu kental manis putih, es batu serut.</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Siapkan mangkuk saji, tata semua bahan isian secara berdampingan agar terlihat cantik warnanya.</li>
+        <li>Letakkan es serut yang menggunung di bagian tengah.</li>
+        <li>Siramkan sirup merah secukupnya di atas es serut, lalu diikuti dengan susu kental manis.</li>
+        <li>Sajikan segera sebagai hidangan penutup yang menyegarkan.</li>
+    </ol>
+</div></div></div></div>
+
+<div class="modal fade" id="d10" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning"><h5 class="fw-bold m-0">Resep: Wedang Jahe Rempah Gula Merah</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <div class="resep-section-title">Bahan Utama:</div>
+    <ul>
+        <li>200g jahe emprit (bakar, kupas, geprek kasar), 1 liter air bersih.</li>
+        <li>Rempah Tambahan: 2 batang serai (ambil putihnya, geprek), 3 cm kayu manis, 2 lembar daun pandan.</li>
+        <li>Pemanis: 150g gula aren/merah berkualitas (sisir halus).</li>
+    </ul>
+    <div class="resep-section-title">Langkah Membuat:</div>
+    <ol>
+        <li>Rebus air bersama jahe, serai, kayu manis, dan daun pandan. Gunakan api sedang.</li>
+        <li>Setelah air mendidih, masukkan gula aren. Aduk hingga gula larut sepenuhnya.</li>
+        <li>Kecilkan api, biarkan mendidih perlahan selama 15 menit agar sari rempah keluar maksimal.</li>
+        <li>Saring ke dalam cangkir, sajikan selagi panas. Sangat cocok untuk meningkatkan imun tubuh.</li>
+    </ol>
+</div></div></div></div>
+
+ <hr style="height: 3px; border-width: 0; background-color: var(--primary-color); opacity: 1;">
+
+  <footer class="footer-custom shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Tentang NusaFood</h5>
+          <p class="small mb-0">Platform pemesanan dan eksplorasi masakan nusantara yang menghubungkan Anda dengan cita rasa lokal.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <h5 class="fw-bold">Hubungi Kami</h5>
+          <p class="small mb-0">WhatsApp: 0812-8873-9423<br>Email: support@nusafood.id</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center text-md-end">
+          <h5 class="fw-bold">Ikuti Kami</h5>
+          <div class="d-flex justify-content-center justify-content-md-end gap-3 mt-2">
+            <a href="#" class="text-dark fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="fab fa-twitter"></i></a>
+          </div></div></div>
+
+      <hr class="bg-dark">
+  
+      <div class="text-center mt-3">
+        <p class="mb-0 fw-bold small">&copy; 2025 Resep Nusantara. Tugas Akhir Semester.</p>
+        <p class="mb-0 small text-muted mt-1">Nama: Jhoan Imanuel Lawarissa | NIM: 251011700240 | Kelas: 01SIFP004</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+   <script>
+    function updateGreetingAndTime() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      let greeting = "";
+
+      if (hours >= 5 && hours < 11) {
+        greeting = "Selamat Pagi!";
+      } else if (hours >= 11 && hours < 15) {
+        greeting = "Selamat Siang!";
+      } else if (hours >= 15 && hours < 18) {
+        greeting = "Selamat Sore!";
+      } else {
+        greeting = "Selamat Malam!";
+      }
+
+      document.getElementById("greeting-text").innerText = greeting;
+      document.getElementById("digital-clock").innerText = hours.toString().padStart(2, '0') + ":" + minutes + ":" + seconds;
+    }
+
+    setInterval(updateGreetingAndTime, 1000);
+    updateGreetingAndTime();
+  </script>
+
+</body>
+</html>

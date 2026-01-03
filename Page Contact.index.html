@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact & Share Recipe - Resep Nusantara</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --primary-color: #ffc107; }
+    
+    body { 
+      padding-top: 100px; 
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa; 
+    }
+
+    /*BANNER */
+    .hero-banner {
+      height: 450px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('img/Minuman 2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 40px;
+    }
+
+    .hero-banner h1 { 
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem; 
+      font-weight: 800; 
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+    }
+    
+    .hero-banner p { font-size: 1.2rem; max-width: 600px; margin: auto; }
+
+    /* Gaya Greeting Box */
+    #greeting-box {
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: 1px solid var(--primary-color);
+    }
+
+    #digital-clock {
+      letter-spacing: 2px;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* Card Styling */
+    .contact-card, .recipe-display-card {
+      background: #fff; border-radius: 15px; border: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); overflow: hidden;
+    }
+    .info-box { background-color: var(--primary-color); color: #212529; padding: 40px; }
+    .form-box { padding: 40px; }
+    .btn-submit { background-color: var(--primary-color); font-weight: bold; border: none; padding: 12px; transition: 0.3s; }
+    .btn-submit:hover { background-color: #e5ac00; transform: translateY(-2px); }
+    .nav-tabs .nav-link { color: #000; font-weight: bold; border: none; }
+    .nav-tabs .nav-link.active { background-color: var(--primary-color); border-radius: 50px; }
+    .user-recipe-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+    .border-dashed { border: 2px dashed #ffc107 !important; background: transparent !important; }
+    .footer-custom { background-color: #ffc107; color: #212529; padding: 40px 0 20px 0; margin-top: 50px; }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-warning fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/Logo 1.png" alt="logo" width="80" height="80" class="d-inline-block me-0">
+        <span class="fw-bold" style="font-size: 0.9rem;">Resep Nusantara</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Home UAS.index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Profil.index.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Resep.index.html">Resep</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Gallery UAS.index.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold" href="Page Contact.index.html">Contact/Form</a></li> 
+        </ul>
+        <form class="d-flex ms-lg-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari resep...">
+          <button class="btn btn-dark" type="submit">Cari</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-banner shadow-sm">
+    <div class="container">
+      <div id="greeting-box">
+        <span id="greeting-text" class="text-warning fw-bold"></span>
+        <span id="digital-clock" class="text-white fw-bold">00:00:00</span>
+      </div>
+      <h1 class="display-4 fw-bold">INTERAKSI PENGGUNA</h1>
+      <p>Kirim pesan atau bagikan resep andalan keluarga Anda!</p>
+    </div>
+  </header>
+
+  <div class="container mt-5 text-dark">
+    <ul class="nav nav-tabs mb-4 border-0 justify-content-center" id="contactTab" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active rounded-pill px-4 me-2 shadow-sm" data-bs-toggle="tab" data-bs-target="#formKontak">Hubungi Kami</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link rounded-pill px-4 shadow-sm" data-bs-toggle="tab" data-bs-target="#formResep">Kirim Resep Baru</button>
+      </li>
+    </ul>
+
+
+    <div class="tab-content shadow-lg rounded-4">
+      <div class="tab-pane fade show active" id="formKontak">
+        <div class="contact-card">
+          <div class="row g-0">
+            <div class="col-md-7 form-box">
+              <h3 class="fw-bold mb-4">Kirim Pesan</h3>
+              <form action="#">
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label">Nama Lengkap</label><input type="text" class="form-control"></div>
+                  <div class="col-md-6"><label class="form-label">Email</label><input type="email" class="form-control"></div>
+                  <div class="col-12"><label class="form-label">Pesan</label><textarea class="form-control" rows="4"></textarea></div>
+                  <div class="col-12"><button type="submit" class="btn btn-submit w-100">Kirim Pesan</button></div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-5 info-box d-flex flex-column justify-content-center">
+              <h3 class="fw-bold mb-4">Informasi Kontak</h3>
+              <p><i class="fab fa-whatsapp me-2"></i> 0812-8873-9423</p>
+              <p><i class="far fa-envelope me-2"></i> support@nusafood.id</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="formResep">
+        <div class="form-box bg-white rounded-4">
+          <h3 class="fw-bold mb-4 text-center">Formulir Berbagi Resep</h3>
+          <form id="recipeForm">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label fw-bold">Judul Resep</label><input type="text" id="in-judul" class="form-control" required></div>
+              <div class="col-md-6"><label class="form-label fw-bold">Kategori</label><select id="in-kategori" class="form-select"><option>Makanan</option><option>Minuman</option></select></div>
+              <div class="col-12"><label class="form-label fw-bold">Nama Anda</label><input type="text" id="in-nama" class="form-control" required></div>
+              <div class="col-12"><label class="form-label fw-bold">Pilih Gambar</label><input type="file" id="in-file-foto" class="form-control" accept="image/*" required></div>
+              <div class="col-12"><label class="form-label fw-bold">Bahan-Bahan</label><textarea id="in-bahan" class="form-control" rows="3" placeholder="Pisahkan dengan baris baru..." required></textarea></div>
+              <div class="col-12"><label class="form-label fw-bold">Cara Pembuatan</label><textarea id="in-cara" class="form-control" rows="3" placeholder="Tulis langkah-langkah..." required></textarea></div>
+              <div class="col-12"><button type="button" onclick="publikasikanResep()" class="btn btn-dark w-100 text-warning fw-bold">Publikasikan Resep</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5">
+      <h3 class="fw-bold mb-4 border-start border-warning border-5 ps-3">Kiriman Resep Pengguna</h3>
+      <div class="row g-4" id="daftarResep">
+        <div class="col-md-4">
+          <div class="recipe-display-card p-3 h-100">
+            <img src="img/Makanan 2.jpeg" class="user-recipe-img mb-3">
+            <span class="badge bg-warning text-dark mb-2">Makanan</span>
+            <h5 class="fw-bold">Rendang Daging Sapi</h5>
+            <p class="small text-muted">Oleh: Admin Nusantara</p>
+            <hr>
+            <button class="btn btn-sm btn-outline-dark w-100 fw-bold" onclick="lihatDetail('Rendang Daging Sapi', 'Admin Nusantara', '• 1 kg Daging Sapi\n• Santan\n• Bumbu Rendang', '1. Masak santan dan bumbu.\n2. Masukkan daging.\n3. Masak hingga kering.')">Lihat Detail Resep</button>
+          </div>
+        </div>
+        <div class="col-md-4" id="kartuSelanjutnya">
+          <div class="recipe-display-card p-3 h-100 text-center d-flex flex-column justify-content-center border-dashed">
+             <i class="fas fa-plus-circle fs-1 text-warning mb-3"></i>
+             <p class="fw-bold">Resep Anda Selanjutnya?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalDetail" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-warning border-0">
+          <h5 class="modal-title fw-bold" id="det-judul">Detail Resep</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Kontributor:</strong> <span id="det-nama" class="text-primary fw-bold"></span></p>
+          <hr>
+          <h6 class="fw-bold text-warning">Bahan-bahan:</h6>
+          <p id="det-bahan" style="white-space: pre-line; background: #fdfdfd; padding: 10px; border-radius: 5px;"></p>
+          <h6 class="fw-bold text-warning">Langkah Pembuatan:</h6>
+          <p id="det-cara" style="white-space: pre-line; background: #fdfdfd; padding: 10px; border-radius: 5px;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <hr style="height: 3px; border-width: 0; background-color: var(--primary-color); opacity: 1;">
+
+  <footer class="footer-custom shadow-lg">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Tentang NusaFood</h5>
+          <p class="small mb-0">Platform pemesanan dan eksplorasi masakan nusantara yang menghubungkan Anda dengan cita rasa lokal.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <h5 class="fw-bold">Hubungi Kami</h5>
+          <p class="small mb-0">WhatsApp: 0812-8873-9423<br>Email: support@nusafood.id</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center text-md-end">
+          <h5 class="fw-bold">Ikuti Kami</h5>
+          <div class="d-flex justify-content-center justify-content-md-end gap-3 mt-2">
+            <a href="#" class="text-dark fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="bg-dark">
+      <div class="text-center mt-3">
+        <p class="mb-0 fw-bold small">© 2025 Resep Nusantara. Tugas Akhir Semester.</p>
+        <p class="mb-0 small text-muted mt-1">Nama: Jhoan Imanuel Lawarissa | NIM: 251011700240 | Kelas: 01SIFP004</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // JAM & GREETING 
+    function updateGreetingAndTime() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      let greeting = "";
+
+      if (hours >= 5 && hours < 11) greeting = "Selamat Pagi!";
+      else if (hours >= 11 && hours < 15) greeting = "Selamat Siang!";
+      else if (hours >= 15 && hours < 18) greeting = "Selamat Sore!";
+      else greeting = "Selamat Malam!";
+
+      const gText = document.getElementById("greeting-text");
+      const gClock = document.getElementById("digital-clock");
+      if(gText) gText.innerText = greeting;
+      if(gClock) gClock.innerText = `${String(hours).padStart(2, '0')}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateGreetingAndTime, 1000);
+    updateGreetingAndTime();
+
+    // PUBLIKASI RESEP
+    function publikasikanResep() {
+      const judul = document.getElementById('in-judul').value;
+      const kategori = document.getElementById('in-kategori').value;
+      const nama = document.getElementById('in-nama').value;
+      const fileInput = document.getElementById('in-file-foto');
+      const bahan = document.getElementById('in-bahan').value;
+      const cara = document.getElementById('in-cara').value;
+
+      if(!judul || !nama || fileInput.files.length === 0) { 
+        alert("Mohon lengkapi semua data dan pilih foto!"); 
+        return; 
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-4';
+        col.innerHTML = `
+          <div class="recipe-display-card p-3 h-100">
+            <img src="${e.target.result}" class="user-recipe-img mb-3">
+            <span class="badge bg-warning text-dark mb-2">${kategori}</span>
+            <h5 class="fw-bold">${judul}</h5>
+            <p class="small text-muted">Oleh: ${nama}</p>
+            <hr>
+            <button class="btn btn-sm btn-outline-dark w-100 fw-bold" onclick="lihatDetail('${judul}', '${nama}', \`${bahan}\`, \`${cara}\`)">Lihat Detail Resep</button>
+          </div>`;
+        document.getElementById('daftarResep').insertBefore(col, document.getElementById('kartuSelanjutnya'));
+        document.getElementById('recipeForm').reset();
+        alert("Resep berhasil dipublikasikan!");
+      };
+      reader.readAsDataURL(fileInput.files[0]);
+    }
+
+    function lihatDetail(judul, nama, bahan, cara) {
+      document.getElementById('det-judul').innerText = judul;
+      document.getElementById('det-nama').innerText = nama;
+      document.getElementById('det-bahan').innerText = bahan;
+      document.getElementById('det-cara').innerText = cara;
+      new bootstrap.Modal(document.getElementById('modalDetail')).show();
+    }
+  </script>
+</body>
+</html>

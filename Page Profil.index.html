@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil Kami - Resep Nusantara</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #ffc107;
+    }
+
+    body {
+      padding-top: 100px; /* Disamakan dengan Home */
+      background-color: #f8f9fa;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Profile Header Styling */
+    .profile-header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/Makanan 3.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 40px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    /* Content Card Styling */
+    .content-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      border: 1px solid var(--primary-color);
+    }
+
+    /* Waktu */
+    #greeting-box {
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: 1px solid var(--primary-color);
+    }
+
+    #digital-clock {
+      letter-spacing: 2px;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* Footer Styling */
+    .footer-custom {
+      background-color: #ffc107;
+      color: #212529;
+      padding: 40px 0 20px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-warning fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/Logo 1.png" alt="logo" width="80" height="80" class="d-inline-block me-0">
+        <span class="fw-bold" style="font-size: 1rem;">Resep Nusantara</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Home UAS.index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold" href="Page Profil.index.html">Profile</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Resep.index.html">Resep</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="Page Contact.index.html">Gallery</a></li> 
+          <li class="nav-item"><a class="nav-link fw-bold" href="contact.html">Contact/Form</a></li> 
+        </ul>
+        <form class="d-flex ms-lg-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari resep...">
+          <button class="btn btn-dark" type="submit">Cari</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="profile-header shadow">
+      <div id="greeting-box">
+         <span id="greeting-text" class="text-warning fw-bold"></span>
+         <span id="digital-clock" class="text-white fw-bold">00:00:00</span>
+      </div>
+      <br>
+      <img src="img/Logo 1.png" alt="Profile Logo" class="profile-img bg-white">
+      <h1 class="fw-bold">NusaFood</h1>
+      <p class="lead">Melestarikan Warisan Kuliner Indonesia</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="content-card h-100 shadow-sm">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-warning rounded-circle p-2 me-3">
+               <i class="fas fa-eye text-dark"></i>
+            </div>
+            <h3 class="fw-bold mb-0">Visi Kami</h3>
+          </div>
+          <p>Menjadi platform digital nomor satu di Indonesia yang mengedukasi dan memudahkan masyarakat dalam mengakses resep-resep tradisional asli nusantara, serta menjaga agar budaya kuliner kita tetap hidup di generasi mendatang.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="content-card h-100 shadow-sm">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-warning rounded-circle p-2 me-3">
+               <i class="fas fa-bullseye text-dark"></i>
+            </div>
+            <h3 class="fw-bold mb-0">Misi Kami</h3>
+          </div>
+          <ul class="ps-3">
+            <li>Menyediakan kumpulan resep terlengkap dari berbagai daerah di Indonesia.</li>
+            <li>Memastikan setiap resep mudah dipahami oleh pemula maupun profesional.</li>
+            <li>Membangun komunitas pecinta masak yang saling berbagi tips dan pengalaman kuliner.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card mt-4">
+      <h3 class="fw-bold text-center mb-4">Tentang Kami</h3>
+      <p class="text-center mx-auto" style="max-width: 800px;">
+        Berawal dari kecintaan terhadap keberagaman rasa di tanah air, <strong>NusaFood</strong> hadir sebagai wadah bagi siapa saja yang ingin mencicipi lezatnya hidangan Indonesia dari dapur mereka sendiri. Kami percaya bahwa setiap bumbu memiliki cerita, dan setiap hidangan adalah warisan berharga.
+      </p>
+    </div>
+  </div>
+
+   <hr style="height: 3px; border-width: 0; background-color: var(--primary-color); opacity: 1;">
+
+  <footer class="footer-custom shadow-lg">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Tentang NusaFood</h5>
+          <p class="small mb-0">Platform pemesanan dan eksplorasi masakan nusantara yang menghubungkan Anda dengan cita rasa lokal.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <h5 class="fw-bold">Hubungi Kami</h5>
+          <p class="small mb-0">WhatsApp: 0812-8873-9423<br>Email: support@nusafood.id</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center text-md-end">
+          <h5 class="fw-bold">Ikuti Kami</h5>
+          <div class="d-flex justify-content-center justify-content-md-end gap-3 mt-2">
+            <a href="#" class="text-dark fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-dark fs-4"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="bg-dark">
+      <div class="text-center mt-3">
+        <p class="mb-0 fw-bold small">© 2025 Resep Nusantara. Tugas Akhir Semester.</p>
+        <p class="mb-0 small text-muted mt-1">Nama: Jhoan Imanuel Lawarissa | NIM: 251011700240 | Kelas: 01SIFP004</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    function updateGreetingAndTime() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      let greeting = "";
+
+      if (hours >= 5 && hours < 11) {
+        greeting = "Selamat Pagi!";
+      } else if (hours >= 11 && hours < 15) {
+        greeting = "Selamat Siang!";
+      } else if (hours >= 15 && hours < 18) {
+        greeting = "Selamat Sore!";
+      } else {
+        greeting = "Selamat Malam!";
+      }
+
+      document.getElementById("greeting-text").innerText = greeting;
+      document.getElementById("digital-clock").innerText = hours.toString().padStart(2, '0') + ":" + minutes + ":" + seconds;
+    }
+
+    setInterval(updateGreetingAndTime, 1000);
+    updateGreetingAndTime();
+  </script>
+</body>
+
+</html>
